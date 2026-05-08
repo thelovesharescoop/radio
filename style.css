@@ -1,0 +1,61 @@
+/*--radio--*/
+
+#main{
+  margin-top:30px;
+  margin-left:500px;
+}
+
+.main
+{
+  width: 331px;
+  height: 598px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button
+{
+  width:90px;
+  height:20px;
+  background:none;
+  border:none;
+  position:absolute;
+  left:0;
+  margin-top:-20px;
+  top:0;
+  cursor:pointer;
+}
+
+.radio
+{
+  width: 331px;
+  height: 598px;
+  position: absolute;
+ }
+
+#btop {
+  z-index:500;
+  margin-top:168px;
+  margin-left:772px;
+}   
+
+#bmid {
+  margin-top:228px;
+  margin-left:758px;
+}   
+
+#bbottom {
+  z-index:500;
+  margin-top:320px;
+  margin-left:745px;
+}   
+
+.btop:hover {
+  filter: brightness(120%);
+  transform: scale(0.97);
+}
+
+
+/*--radio--*/

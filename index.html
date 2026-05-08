@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWAITING YOUR CONNECTION....</title>
+  </head>
+  <body>
+
+<!--radio-->
+    
+  <div id="main">
+    
+  <img id="radio" src="https://github.com/thelovesharescoop/radio/blob/main/.github/MAIN.png?raw=true">
+  <button id="btop"  class="playpause-track fas fa-play" onclick="playpauseTrack()"><img src="https://github.com/thelovesharescoop/radio/blob/main/.github/Layer%202.png?raw=true"></button>
+   <button id="bmid" class="bmid" onclick="prevTrack()"><img src="https://github.com/thelovesharescoop/radio/blob/main/.github/Layer%203.png?raw=true"></button>
+   <button id="bbottom"  class="fas fa-forward" onclick="nextTrack()"><img src="https://github.com/thelovesharescoop/radio/blob/main/.github/Layer%204.png?raw=true"></button>
+
+  <audio id="music" src=""></audio>
+  </div>
+
+
+
+    <!--audio-->
+<script>
+  // initiate variables
+  let playpause_btn = document.querySelector(".playpause-track");
+  let next_btn = document.querySelector(".next-track");
+  let prev_btn = document.querySelector(".prev-track");
+  let track_index = 0;
+  let isPlaying = false;
+  
+  // create new audio element
+  let curr_track = document.getElementById("music");
+  //
+  // DEFINE YOUR SONGS HERE!!!!!
+  // MORE THAN FOUR SONGS CAN BE ADDED!!
+  // JUST ADD ANOTHER BRACKET WITH NAME AND PATH
+  // CATBOX.MOE IS RECOMMENDED FOR UPLOADING MP3 FILES
+  let track_list = [{
+      name: "ipod touch - ninajirachi",
+      path: "https://files.catbox.moe/4dnmy9.mp3"
+    },
+    {
+      name: "best to you - blood orange",
+      path: "https://dl.dropbox.com/scl/fi/jcan0b7bavand3fyw4uem/Dive-for-You-4.mp3?rlkey=0uc0nbigl0zhskrdc7cu4j1qb&st=gklucz57&dl=0"
+    },
+    {
+      name: "angel on a satellite - magdalena bay",
+      path: "https://files.catbox.moe/ptu5wv.mp3"
+    },
+    {
+      name: "crush - ethel caine",
+      path: "https://files.catbox.moe/61hiva.mp3"
+    },
+    {
+      name: "sulky baby - yuele",
+      path: "https://files.catbox.moe/bi9gms.mp3"
+    }];
+  //
+  //
+  //
+  //
+  //
+   function loadTrack(track_index){
+    // load a new track
+    curr_track.src = track_list[track_index].path;
+    curr_track.load();
+    // move to the next track if the current one finishes playing 
+    curr_track.addEventListener("ended", nextTrack);
+  }
+  // checks if song is playing
+  function playpauseTrack() {
+    if (!isPlaying) playTrack();
+    else pauseTrack();
+  }
+  // plays track when play button is pressed
+  function playTrack() {
+    curr_track.play();
+    isPlaying = true;
+}
+
+function pauseTrack() {
+    curr_track.pause();
+    isPlaying = false;
+}
+  // moves to the next track
+  function nextTrack() {
+    if (track_index < track_list.length - 1)
+      track_index += 1;
+    else track_index = 0;
+    loadTrack(track_index);
+
+      if (isPlaying) playTrack(); 
+  }
+  // moves to the previous track
+  function prevTrack() {
+    if (track_index > 0)
+      track_index -= 1;
+    else track_index = track_list.length;
+    loadTrack(track_index);
+      if (isPlaying) playTrack(); 
+  }
+  loadTrack(track_index);
+</script>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
