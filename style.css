@@ -1,8 +1,17 @@
+
+body{
+background-image:url(https://psychicnewborn.neocities.org/media/bg.gif);
+animation:mainscroll 40s linear infinite;"
+}
+
+
 /*--radio--*/
 
 #main{
-  margin-top:30px;
-  margin-left:500px;
+  margin-top:100px;
+  margin-left:800px;
+}
+  
 }
 
 .main
@@ -35,27 +44,45 @@ button
   position: absolute;
  }
 
+#radio{
+filter: drop-shadow(0 0 0.75rem white);
+}
+
 #btop {
   z-index:500;
-  margin-top:168px;
-  margin-left:772px;
+  margin-top:238px;
+  margin-left:1072px;
+  transition: filter 0.2s;
 }   
 
 #bmid {
-  margin-top:228px;
-  margin-left:758px;
+    z-index:501;
+  margin-top:298px;
+  margin-left:1058px;
+  transition: filter 0.2s;
 }   
 
 #bbottom {
   z-index:500;
-  margin-top:320px;
-  margin-left:745px;
+  margin-top:390px;
+  margin-left:1045px;
+  transition: filter 0.1s;
 }   
 
-.btop:hover {
-  filter: brightness(120%);
-  transform: scale(0.97);
+#btop:hover, #bmid:hover, #bbottom:hover {
+  filter: brightness(80%);
+  width: 88px;
+  transform: scale(0.98)
 }
 
 
-/*--radio--*/
+#grad{
+  background-image: radial-gradient(circle, red 1%, transparent 50%);
+  height: 500px;
+  width: 500px;
+  margin-top:100px;
+  margin-left:800px;
+  position:absolute;
+  z-index:0;
+}
+
